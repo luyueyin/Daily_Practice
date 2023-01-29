@@ -1,4 +1,5 @@
 function Card() {
+
     const items = [
         {
             id: 1,
@@ -31,15 +32,31 @@ function Card() {
             <h2>Cart</h2>
             {
                 items.map((item) => {
-                    return {
-                        
-
-                    }
-            })
-        }
-        
-    </div>
-        )    
+                    return (
+                        <div>
+                            <img style={{
+                                height: 250,
+                            }} src={item.image} alt="Bag">
+                            </img>
+                            <div style={{
+                                fontSize: 30,
+                                fontWeight: 'bold',
+                                marginBottom: 20
+                            }}>{item.title}
+                            </div>
+                            <div>{item.description}</div>
+                            <div
+                                style={{
+                                    color: 'red',
+                                    marginTop: 10
+                                }}>${item.price}
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
 }
 
 export default Card

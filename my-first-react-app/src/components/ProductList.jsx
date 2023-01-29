@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Product from "./Product";
 
 function ProductList() {
@@ -44,7 +43,7 @@ function ProductList() {
     return (
         <>
         <h2>Product</h2>
-        < div style={{
+        <div style={{
             display: 'flex'
         }}>
             {
@@ -57,7 +56,7 @@ function ProductList() {
             {/* // <Product ProductInfo={items[0]} />
             // <Product ProductInfo={items[1]} />
             // <Product ProductInfo={items[2]} /> */}
-        </ div>
+        </div>
         </>
     )
 }

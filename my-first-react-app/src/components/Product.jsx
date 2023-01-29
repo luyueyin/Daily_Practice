@@ -19,7 +19,7 @@ function Product(props) {
             <img style={{
                 height: 250,
             }} src={item.image} alt="Bag"></img>
-            <div style={{
+            <div style={{  
                 fontSize: 30,
                 fontWeight: 'bold',
                 marginBottom: 20
