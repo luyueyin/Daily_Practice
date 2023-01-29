@@ -2,6 +2,7 @@
 // import Product from "./Product";
 // importing named export - name must be same
 import { ProductList } from "./ProductList"
+import Cart from "./Cart"
 
 const App = () => {
   
@@ -9,6 +10,7 @@ const App = () => {
     // jsx
     <div className="App">
       <ProductList />
+      <Cart />
     </div>
   );
 };
