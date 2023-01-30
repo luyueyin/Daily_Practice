@@ -1,3 +1,18 @@
+import styled from "styled-components"
+
+import Button from "./styled/Button"
+
+const Wrapper = styled.div`
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:  1px 1px 13px 1px rgba(0,0,0,0.26);
+    :hover {
+        box-shadow:  1px 1px 17px 1px rgba(0,0,0,0.4);
+    }
+`
+
 function Product(props) {
     // const item = {
     //     id: 1,
@@ -15,7 +30,7 @@ function Product(props) {
 
     const item = props.ProductInfo
     return (
-        <div>
+        <Wrapper>
             <img style={{
                 height: 250,
             }} src={item.image} alt="Bag"></img>
@@ -28,9 +43,11 @@ function Product(props) {
             <div
                 style={{
                     color: 'red',
-                    marginTop: 10
+                    marginTop: 7,
+                    marginBottom:15,
                 }}>${item.price}</div>
-        </div>
+            <Button>Add To Cart</Button>
+        </Wrapper>
     )
 }
 
