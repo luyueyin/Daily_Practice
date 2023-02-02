@@ -1,3 +1,5 @@
+
+import { useState } from "react"
 import styled from "styled-components"
 
 import Button from "./styled/Button"
@@ -14,21 +16,16 @@ const Wrapper = styled.div`
 `
 
 function Product(props) {
-    // const item = {
-    //     id: 1,
-    //     title: "Bag",
-    //     price: 50,
-    //     description: "Bags for eneryone",
-    //     category: "Womens",
-    //     image: "https://robohash.org/hi",
-    //     rating: {
-    //         rate: 4,
-    //         count: 100
-    //     }
-
-    // }
 
     const item = props.ProductInfo
+    const [itemOnCart, setItemOnCard] = useState(0)
+
+    function handleAddToCard() {
+        setItemOnCard((preState) => {
+            return preState + 1
+        })
+    }
+
     return (
         <Wrapper>
             <img style={{
@@ -46,7 +43,13 @@ function Product(props) {
                     marginTop: 7,
                     marginBottom:15,
                 }}>${item.price}</div>
-            <Button>Add To Cart</Button>
+            <div>Stock: {item.stock}</div>
+            <div>Stock Left: {item.stock - itemOnCart}</div>
+            <Button 
+                greaterThanFive={itemOnCart > 5}
+                disabled={item.stock === itemOnCart} 
+                onClick={handleAddToCard}>Add To Cart
+            </Button>
         </Wrapper>
     )
 }

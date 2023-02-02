@@ -19,8 +19,9 @@ function ProductList() {
             image: "https://robohash.org/Bag",
             rating: {
                 rate: 4,
-                count: 100
+                count: 100,
             },
+            stock: 10,
         },
         {
             id: 2,
@@ -31,8 +32,9 @@ function ProductList() {
             image: "https://robohash.org/Phone",
             rating: {
                 rate: 4,
-                count: 100
+                count: 100,
             },
+            stock: 10,
         },
         {
             id: 3,
@@ -43,8 +45,9 @@ function ProductList() {
             image: "https://robohash.org/shoe",
             rating: {
                 rate: 4,
-                count: 100
-            }
+                count: 100,
+            },
+            stock: 10,
         },
         {
             id: 4,
@@ -55,8 +58,9 @@ function ProductList() {
             image: "https://robohash.org/Bagx",
             rating: {
                 rate: 4,
-                count: 100
+                count: 100,
             },
+            stock: 10,
         },
         {
             id: 5,
@@ -67,8 +71,9 @@ function ProductList() {
             image: "https://robohash.org/Phonex",
             rating: {
                 rate: 4,
-                count: 100
+                count: 100,
             },
+            stock: 10,
         },
         {
             id: 6,
@@ -79,8 +84,9 @@ function ProductList() {
             image: "https://robohash.org/shoex",
             rating: {
                 rate: 4,
-                count: 100
-            }
+                count: 100,
+            },
+            stock: 10,
         },
         {
             id: 7,
@@ -91,8 +97,9 @@ function ProductList() {
             image: "https://robohash.org/Bagy",
             rating: {
                 rate: 4,
-                count: 100
+                count: 100,
             },
+            stock: 10,
         },
         {
             id: 8,
@@ -105,6 +112,7 @@ function ProductList() {
                 rate: 4,
                 count: 100
             },
+            stock: 10,
         },
         {
             id: 9,
@@ -115,8 +123,9 @@ function ProductList() {
             image: "https://robohash.org/shoey",
             rating: {
                 rate: 4,
-                count: 100
-            }
+                count: 100,
+            },
+            stock: 10,
         }
 
     ]
