@@ -41,9 +41,9 @@ const CartItem = (props) => {
             </div>
             <div>Stock: {item.stock}</div>
             <div style={{ marginTop: 15 }}>
-                <button onClick={handleDecrease}> - </button>
+                <button disabled={noOfItems === 0} onClick={handleDecrease}> - </button>
                 <span style={{ margin: '0px 5px' }}> {noOfItems} </span>
-                <button onClick={handleIncrease}> + </button>
+                <button disabled={noOfItems === item.stock} onClick={handleIncrease}> + </button>
             </div>
             <div>Total Price: ${noOfItems * item.price}</div>
         </div>

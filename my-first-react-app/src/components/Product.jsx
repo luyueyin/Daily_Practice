@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 function Product(props) {
 
     const item = props.ProductInfo
+
     const [itemOnCart, setItemOnCard] = useState(0)
 
     function handleAddToCard() {
@@ -31,7 +32,7 @@ function Product(props) {
             <img style={{
                 height: 250,
             }} src={item.image} alt="Bag"></img>
-            <div style={{  
+            <div style={{
                 fontSize: 30,
                 fontWeight: 'bold',
                 marginBottom: 20
@@ -41,15 +42,21 @@ function Product(props) {
                 style={{
                     color: 'red',
                     marginTop: 7,
-                    marginBottom:15,
+                    marginBottom: 15,
                 }}>${item.price}</div>
             <div>Stock: {item.stock}</div>
             <div>Stock Left: {item.stock - itemOnCart}</div>
-            <Button 
+
+
+            <Button
                 greaterThanFive={itemOnCart > 5}
-                disabled={item.stock === itemOnCart} 
-                onClick={handleAddToCard}>Add To Cart
+                disabled={item.stock === itemOnCart}
+                onClick={handleAddToCard}>
+                {
+                    item.stock === itemOnCart ? "No Stock Left" : "Add To Cart"
+                }
             </Button>
+
         </Wrapper>
     )
 }
