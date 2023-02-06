@@ -19,10 +19,10 @@ function Product(props) {
 
     const item = props.ProductInfo
 
-    const [itemOnCart, setItemOnCard] = useState(0)
+    const [itemOnCart, setItemOnCart] = useState(0)
 
-    function handleAddToCard() {
-        setItemOnCard((preState) => {
+    function handleAddToCart() {
+        setItemOnCart((preState) => {
             return preState + 1
         })
     }
@@ -47,16 +47,14 @@ function Product(props) {
             <div>Stock: {item.stock}</div>
             <div>Stock Left: {item.stock - itemOnCart}</div>
 
-
             <Button
                 greaterThanFive={itemOnCart > 5}
                 disabled={item.stock === itemOnCart}
-                onClick={handleAddToCard}>
+                onClick={handleAddToCart}>
                 {
                     item.stock === itemOnCart ? "No Stock Left" : "Add To Cart"
                 }
             </Button>
-
         </Wrapper>
     )
 }

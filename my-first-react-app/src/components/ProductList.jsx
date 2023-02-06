@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-import Product from "./Product";
+// import Product from "./Product";
+import ProductClass from "./ProductClass";
 import Title from "./styled/Title"
 import GridBox from "./styled/GridBox"
+
 
 const CustomGrid = styled(GridBox)`
     padding: 60px;
@@ -136,13 +138,10 @@ function ProductList() {
             {
                 items.map((item) => {
                     return (
-                        <Product key={item.is} ProductInfo={item} />
+                        <ProductClass key={item.id} ProductInfo={item} />
                     )
                 })
             }
-            {/* // <Product ProductInfo={items[0]} />
-            // <Product ProductInfo={items[1]} />
-            // <Product ProductInfo={items[2]} /> */}
         </CustomGrid>
         </div>
     )
