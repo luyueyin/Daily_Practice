@@ -50,7 +50,6 @@ class ProductListClass extends Component {
                         <CircularProgress />
                     </Box>
                 ) : (
-
                     <div id="products">
                         <Title>Products</Title>
                         <CustomGrid>

@@ -12,6 +12,7 @@ import { CircularProgress } from "@mui/material";
 import Box from "@mui/material/Box";
 
 import ProductListClass from "./ProductListClass";
+import ProductInfo from "./ProductInfo";
 
 const App = () => {
   const [isLoading, setIsloading] = useState(true);
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading ? ( 
         <Box sx={{ 
           display: 'flex', 
           justifyContent: 'center', 
@@ -36,6 +37,15 @@ const App = () => {
         <div className="App">
           <NavBar />
           <ProductListClass />
+
+          <ProductInfo item={{
+            title: "Bag",
+            price: 200,
+            desciption: "Description",
+            image: "https:// robohash.org/bag",
+            stock: 10, 
+          }} />
+          
           <Cart />
         </div>
       )}

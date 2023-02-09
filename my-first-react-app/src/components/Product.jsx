@@ -22,8 +22,8 @@ function Product(props) {
     const [itemOnCart, setItemOnCart] = useState(0)
 
     function handleAddToCart() {
-        setItemOnCart((preState) => {
-            return preState + 1
+        setItemOnCart((prevState) => {
+            return prevState + 1
         })
     }
 
