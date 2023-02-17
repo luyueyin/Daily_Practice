@@ -17,8 +17,7 @@ const Wrapper = styled.div`
 
 function Product(props) {
 
-    const item = props.ProductInfo
-
+    const item = props.productInfo
     const [itemOnCart, setItemOnCart] = useState(0)
 
     function handleAddToCart() {
@@ -50,10 +49,9 @@ function Product(props) {
             <Button
                 greaterThanFive={itemOnCart > 5}
                 disabled={item.stock === itemOnCart}
-                onClick={handleAddToCart}>
-                {
-                    item.stock === itemOnCart ? "No Stock Left" : "Add To Cart"
-                }
+                onClick={handleAddToCart}
+            >
+                {item.stock === itemOnCart ? "No Stock Left" : "Add To Cart"}
             </Button>
         </Wrapper>
     )

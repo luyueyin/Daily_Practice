@@ -1,7 +1,7 @@
 import { Component } from "react"
 import styled from "styled-components";
 
-import { CircularProgress } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress"
 import Box from "@mui/material/Box";
 
 import ProductClass from "./ProductClass";
@@ -23,9 +23,9 @@ class ProductListClass extends Component {
     }
 
     componentDidMount() {
-        fetch('https://fakestoreapi.com/products?limit=9')
-            .then(res => res.json())
-            .then(json => {
+        fetch("https://fakestoreapi.com/products?limit=9")
+            .then((res) => res.json())
+            .then((json) => {
                 const newItems = json.map((product) => {
                     product.stock = 5
                     return product
@@ -41,25 +41,29 @@ class ProductListClass extends Component {
         return (
             <>
                 {this.state.isLoading ? (
-                    <Box sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: "center",
-                        height: '100vh'
-                    }}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            height: "100vh",
+                        }}
+                    >
                         <CircularProgress />
                     </Box>
                 ) : (
                     <div id="products">
                         <Title>Products</Title>
                         <CustomGrid>
-                            {
-                                this.state.items.map((item) => {
-                                    return (
-                                        <ProductClass key={item.id} ProductInfo={item} />
-                                    )
-                                })
-                            }
+                            {this.state.items.map((item) => {
+                                return (
+                                    <ProductClass
+                                        key={item.id}
+                                        productInfo={item}
+                                        setItem={this.props.setItem}
+                                    />
+                                )
+                            })}
                         </CustomGrid>
                     </div>
                 )}

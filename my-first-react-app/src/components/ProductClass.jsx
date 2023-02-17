@@ -55,10 +55,12 @@ export default class ProductClass extends Component {
 
 
     render() {
-        const item = this.props.ProductInfo
+        const item = this.props.productInfo
         console.log("render")
         return (
-            <Wrapper>
+            <Wrapper onClick={() => {
+                this.props.setItem(item)
+            }}>
                 <img style={{
                     height: 250,
                 }} src={item.image} alt="Bag"></img>
@@ -90,5 +92,3 @@ export default class ProductClass extends Component {
         )
     }
 }
-
-ç≈

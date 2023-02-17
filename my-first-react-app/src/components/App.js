@@ -2,13 +2,11 @@ import { useState } from "react";
 // importing default export - name can be different
 // import Product from "./Product";
 // importing named export - name must be same
-
-
 // import { ProductList } from "./ProductList";
 import Cart from "./Cart";
 import NavBar from "./mui/NavBar";
 
-import { CircularProgress } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress"
 import Box from "@mui/material/Box";
 
 import ProductListClass from "./ProductListClass";
@@ -16,6 +14,11 @@ import ProductInfo from "./ProductInfo";
 
 const App = () => {
   const [isLoading, setIsloading] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  function setItem(item) {
+    setSelectedItem(item)
+  }
 
   setTimeout(() => {
     setIsloading(false);
@@ -36,15 +39,8 @@ const App = () => {
         // jsx
         <div className="App">
           <NavBar />
-          <ProductListClass />
-
-          <ProductInfo item={{
-            title: "Bag",
-            price: 200,
-            desciption: "Description",
-            image: "https:// robohash.org/bag",
-            stock: 10, 
-          }} />
+          <ProductListClass setItem={setItem} />
+          <ProductInfo item={selectedItem} />
           
           <Cart />
         </div>
