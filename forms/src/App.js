@@ -1,70 +1,89 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
 
 const users = [
   {
     email: "E@gmail.com",
-    password: "password"
+    password: "password",
   },
   {
     email: "D@gmail.com",
-    password: "111111"
-  }
-]
-
+    password: "111111",
+  },
+];
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       errorMessage: "",
-      successMessage: ""
-    }
+      successMessage: "",
+      email: "",
+      password: "",
+    };
   }
 
   onFormSubmit = (event) => {
     event.preventDefault();
+    const { email, password } = this.state;
+    // console.log(email, password)  ---testing
     this.setState({
-      errorMessage: ""
-    })
-    const formElements = event.target.children
-    const emailInput = formElements[1]
-    const passowrdInput = formElements[3]
-    const emailValue = emailInput.value
-    const passwordValue = passowrdInput.value
-    const foundUser = users.find((user) => user.email === emailValue)
+      errorMessage: "",
+      successMessage: "",
+    });
+    const foundUser = users.find((user) => user.email === email);
     if (foundUser) {
-      if (passwordValue === foundUser.password) {
+      if (foundUser.password === password) {
         this.setState({
-          successMessage: "User successfully authenticated!"
-        })
+          successMessage: "User successfully authenticated!",
+        });
       } else {
         this.setState({
-          errorMessage: "Wrong credentials have been provided!"
-        })
+          errorMessage: "Wrong credentials have been provided!",
+        });
       }
     } else {
       this.setState({
-        errorMessage: "Wrong credentials have been provided!"
-      })
+        errorMessage: "Wrong credentials have been provided!",
+      });
     }
-  }
+  };
+
+  handlechange = (event) => {
+    // console.log(event.target.value)
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
 
   render() {
+    const { email, password, errorMessage, successMessage } = this.state;
     return (
-      <div className='container'>
-        {this.state.errorMessage && <p>{this.state.errorMessage}</p>}
-        {this.state.successMessage && <p>{this.state.successMessage}</p>}
+      <div className="container">
+        {errorMessage && <p>{errorMessage}</p>}
+        {successMessage && <p>{successMessage}</p>}
         <h2>Login</h2>
-        <form className='login-form' onSubmit={this.onFormSubmit}>
-          <label htmlFor='email'>Email</label>
-          <input type="email" name='email' id='email' />
-          <label htmlFor='passowrd'>Password</label>
-          <input type="password" name="password" id="password" />
-          <input type='submit' value='submit' id='submit'/>
+        <form className="login-form" onSubmit={this.onFormSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={ email }
+            onChange={this.handlechange}
+          />
+          <label htmlFor="passowrd">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={ password }
+            onChange={this.handlechange}
+          />
+          <input type="submit" value="submit" id="submit" />
         </form>
       </div>
-    )
+    );
   }
 }
 
