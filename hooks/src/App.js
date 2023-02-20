@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import NewProjectForm from './newProjectForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const initialProjects = [
+    {
+      name: "Sets",
+      description: "A React component of popular logic game"
+    },
+    {
+      name: "Chore Tracker",
+      description: "A full stack app to track chores game"
+    },
+    {
+      name: "Fotozu",
+      description: "A full stack app using AWS logic game"
+    },
+  ]
+
+    const [projects, setProjects] = useState(initialProjects)
+
+return (
+  <div>
+    <h1>Recent Projects</h1>
+    <NewProjectForm />
+  </div>
+)
 }
 
 export default App;
