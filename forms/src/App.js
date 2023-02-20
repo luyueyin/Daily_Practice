@@ -12,6 +12,9 @@ const users = [
   },
 ];
 
+
+
+// ------------------ Controlled Components  ------------------
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -86,5 +89,7 @@ class App extends React.Component {
     );
   }
 }
+// ------------------ Controlled Components  ------------------
+
 
 export default App;
