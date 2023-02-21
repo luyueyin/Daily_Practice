@@ -11,7 +11,7 @@ const initialFormState = {
 const [formData, setFormData] = useState(initialFormState);
 
 function changeHander(event) {
-    console.log("updating form data:", event.target.value);
+    // console.log("updating form data:", event.target.value);
     setFormData({
         ...formData,
         [event.target.name]: event.target.value,
