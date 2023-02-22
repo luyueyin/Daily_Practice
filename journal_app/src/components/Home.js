@@ -19,4 +19,4 @@ const Home = ({entries}) => {
     )
 }
 
-export default Home
+export default Home  

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {BrowserRouter as Routes, Route, Router, Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import Home from "./components/Home"
 import CategorySelection from "./components/CategorySelection"
 import NewEntry from "./components/NewEntry"
@@ -16,20 +16,20 @@ const App = () => {
   }
   return (
     <div >
-        <Router>
+        <BrowserRouter>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/category">Category Selection</Link></li>
             <li><Link to="/entry/new/:id">NewEntry</Link></li>
           </ul>
-
+          <h1>Journal</h1>
           <Routes>
             <Route exact path="/" render={(props) =><Home {...props} entries={entries}/>}/>
             <Route path="/category" render={(props) => <CategorySelection {...props} categories={categories}/> }/>
             <Route path="/entry/new/:id" render={(props) => <NewEntry {...props} categories={categories} addEntryToJournal={addEntryToJournal}/> }/>
             <Route component={NotFound} />
           </Routes>
-        </Router>
+        </BrowserRouter>
 
     </div>
   )
